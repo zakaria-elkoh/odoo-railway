@@ -12,6 +12,7 @@ USER root
 
 COPY odoo.conf /etc/odoo/odoo.conf.base
 COPY entrypoint.sh /usr/local/bin/railway-entrypoint.sh
+COPY --chown=odoo:odoo addons/ /mnt/extra-addons/
 RUN chmod 0755 /usr/local/bin/railway-entrypoint.sh \
     && chmod 0644 /etc/odoo/odoo.conf.base
 
